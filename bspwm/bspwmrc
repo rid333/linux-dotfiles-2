@@ -1,0 +1,27 @@
+#! /bin/sh
+
+sxhkd -f &
+
+bspc monitor -d I II III IV V VI VII VIII
+
+bspc config border_width         1
+bspc config window_gap           5
+
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config ignore_ewmh_struts true
+
+bspc config top_padding 40
+
+bspc config focused_border_color \#fff
+
+xsetroot -cursor_name left_ptr &
+
+picom -fb &
+feh --no-fehbg --bg-fill --randomiz ~/Pictures/Wallpapers/* &
+dunst -config $HOME/.config/dunst/dunstrc &
+nm-applet &
+blueman-applet &
+polybar &
